@@ -1,0 +1,42 @@
+body {
+background-image: url("gorla.png");
+background-repeat: no-repeat;
+background-position: right top;
+background-attachment: fixed;
+}
+h1 {
+font-family: HACKED;
+color:#ffffff;
+}
+p.descr {
+font-family: HACKED;
+color:#ffffff;
+}
+p {
+color:#ffffff;
+}
+h3 {
+font-family: "Audiowide";
+color:#ffffff;
+}
+.link {
+  font-family: Segoe UI;
+  background-color: #00ffff;
+  border: none;
+  color: white;
+  border-radius: 25px;
+  padding: 10px; 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+iframe {
+display: none;
+}
+h5 {
+font-family: "Audiowide";
+color:#ffffff;
+}
