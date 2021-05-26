@@ -1,42 +1,47 @@
 body {
-background-image: url("gorla.png");
-background-repeat: no-repeat;
-background-position: right top;
-background-attachment: fixed;
+  background-image: url("gorla.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
 }
-h1 {
-font-family: "Audiowide";
-color:#ffffff;
+h1, h3, h5 {
+  font-family: "Audiowide";
+  color:#ffffff;
 }
 p.descr {
-font-family: "Audiowide";
-color:#ffffff;
+  font-family: "Audiowide";
+  color:#ffffff;
 }
 p {
-color:#ffffff;
+  color:#ffffff;
 }
-h3 {
-font-family: "Audiowide";
-color:#ffffff;
+code {
+  display: none;
 }
 .link {
-  font-family: Segoe UI;
+  font-family: "Audiowide";
   background-color: #00ffff;
   border: none;
   color: white;
-  border-radius: 25px;
-  padding: 10px; 
+  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  border-radius: 5px;
   font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+}
+.link-hide {
+  font-family: "Audiowide";
+  background-color: #00ffff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: none;
+  border-radius: 5px;
+  font-size: 16px;
 }
 iframe {
-display: none;
-}
-h5 {
-font-family: "Audiowide";
-color:#ffffff;
+  display: none;
 }
