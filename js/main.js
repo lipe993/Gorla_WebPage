@@ -26,13 +26,21 @@ const musNames = {
 		"Calm",
 		"Lo-Fi + Hip-Hop II",
 		"Hard Day"
-	]
+	],
+	goingdown: ["Going Down"],
 }
 
 function showHide(id) {
 	let findId = document.getElementById(id);
 	if(findId.style.display == "none") findId.style.display = "block"; 
 	else findId.style.display = "none";
+}
+function typeWriter(message, speed, id, i) {
+	let findId = document.getElementById(id);
+	if(i < message.length) {
+		findId.innerHTML += message.charAt(i);
+		setTimeout(typeWriter, speed, message, speed, id, i + 1);
+	}
 }
 audio1.addEventListener("playing", () => {
 	document.getElementById("info").className = "goto";
@@ -47,7 +55,7 @@ document.getElementById("play-pause").addEventListener("click", () => {
 	else audio1.play();
 });
 document.getElementById("gorla-card").addEventListener("click", () => {
-	showHide("media")
+	showHide("media");
 });
 document.getElementById("bandcamp").addEventListener("click", () => {
 	window.open("https://gorla.bandcamp.com");
@@ -82,8 +90,13 @@ function musWork(album, track, tracksFileFormat) {
 			albumToCall = musNames.chillbeats;
 			albumPatch = "Chill Beats";
 			break;
+		case "goingdown":
+			albumToCall = musNames.goingdown;
+			albumPatch = "Going Down - Single";
+			break;
 	}
-	document.getElementById("musName").innerHTML = albumToCall[currentTrack - 1];
+	document.getElementById("musName").innerHTML = "\0";
+	typeWriter(albumToCall[currentTrack - 1], 70, "musName", 0);
 	document.getElementById("musAlbum").innerHTML = albumPatch;
 }
 document.getElementById("chillbeats").addEventListener("click", () => {
@@ -91,6 +104,9 @@ document.getElementById("chillbeats").addEventListener("click", () => {
 });
 document.getElementById("chilllofi").addEventListener("click", () => {
 	musWork("chilllofi", 1, "mp3");
+});
+document.getElementById("goingdown").addEventListener("click", () => {
+	musWork("goingdown", 1, "ogg");
 });
 document.getElementById("go-back").addEventListener("click", () => {
 	musWork(mus_info.album, mus_info.track - 1, mus_info.format);
@@ -102,3 +118,4 @@ document.getElementById("close").addEventListener("click", () => {
 	audio1.pause();
 	document.getElementById("musplayer").style.display = "none";
 });
+typeWriter("Gorla Music", 70, "headerText", 0);
