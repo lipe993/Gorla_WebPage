@@ -8,8 +8,10 @@
 	</head>
 	<body>
 		<div id="page">
-			<h1 id="header"><b id="headerText"></b></h1>
-			<h3 id="desc">I'm a chill guy that do songs for video games and becouse I like it.</h3>
+			<div id="top">
+				<span id="header"><b id="headerText"></b></span><br>
+				<span id="desc">I'm a chill guy that do songs I like it.</span><br>
+			</div><br>
 			<button id="disco" onclick="showHide('discography')">Discography</button>
 			<div id="discography" style="display: none;">
 				<br>
@@ -36,34 +38,23 @@
 				</div>
 			</div>
 			<br>
-			<div class="card" id="gorla-card">
-				<img src="css/gorla.png" alt="My Logo">
-				<div class="container">
-					<h4>Gorla</h4>
-				</div>
-			</div>
-			<div id="media" style="display: none;">
+			<footer>
 				<div class="card" id="bandcamp">
-					<div class="container">
+					<div class="container all-round">
 						<h4>Bandcamp</h4>
 					</div>
 				</div>
 				<div class="card" id="bandlab">
-					<div class="container">
+					<div class="container all-round">
 						<h4>BandLab</h4>
 					</div>
 				</div>
 				<div class="card" id="youtube">
-					<div class="container">
+					<div class="container all-round">
 						<h4>Youtube</h4>
 					</div>
 				</div>
-				<div class="card" id="soundcloud">
-					<div class="container">
-						<h4>Soundcloud</h4>
-					</div>
-				</div>
-			</div>
+			</footer>
 		</div>
 		<div id="musplayer" style="display: none;">
 			<svg id="go-back" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#FFFFFF">
@@ -87,11 +78,10 @@
 			</svg>
 			<audio id="audio1"></audio>
 			<div id="info">
-				<h4 id="musName"></h4>
-				<h6 id="musAlbum"></h6>
+				<span id="musName"></span>
+				<span id="musAlbum"></span>
 			</div>
 			<h4 id="close">&times;</h4>
-			<canvas id="canvas1"></canvas>
 		</div>
 		<script src="js/main.js"></script>
 	</body>

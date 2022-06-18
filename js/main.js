@@ -3,7 +3,6 @@ const mus_button_icons = [
 	`<svg id="play-pause" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z"/></svg>`,
 	`<svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>`
 ]
-const canvas = document.getElementById("canvas1");
 var mus_info = {
 	album: 0,
 	track: 0,
@@ -65,17 +64,11 @@ document.getElementById("play-pause").addEventListener("click", () => {
 	}
 	else audio1.play();
 });
-document.getElementById("gorla-card").addEventListener("click", () => {
-	showHide("media");
-});
 document.getElementById("bandcamp").addEventListener("click", () => {
 	window.open("https://gorla.bandcamp.com");
 });
 document.getElementById("bandlab").addEventListener("click", () => {
 	window.open("https://www.bandlab.com/gorla_993");
-});
-document.getElementById("soundcloud").addEventListener("click", () => {
-	window.open("https://soundcloud.com/gorla-993");
 });
 document.getElementById("youtube").addEventListener("click", () => {
 	window.open("https://www.youtube.com/channel/UCds8sX73xHVC2XrJs9xsdaA");
