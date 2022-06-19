@@ -32,9 +32,16 @@ const musNames = {
 		"Time to go",
 		"chill out",
 		"in a calm place.",
-		"Chilling Sleep",
 		"Night of Joy",
+		"Chilling Sleep",
 		"Going Down",
+		"forever chill."
+	],
+	justchill: [
+		"chill out",
+		"in a calm place.",
+		"Night of Joy",
+		"Chilling Sleep",
 		"forever chill."
 	]
 }
@@ -99,6 +106,10 @@ function musWork(album, track, lastTrack, tracksFileFormat = "wav") {
 			albumToCall = musNames.foreverchill;
 			albumPatch = "Forever Chill";
 			break;
+		case "justchill":
+			albumToCall = musNames.justchill;
+			albumPatch = "Just Chill - EP";
+			break;
 	}
 	document.getElementById("musName").innerHTML = "";
 	typeWriter(albumToCall[currentTrack - 1], 70, "musName");
@@ -115,6 +126,9 @@ document.getElementById("chilllofi").addEventListener("click", () => {
 document.getElementById("foreverchill").addEventListener("click", () => {
 	musWork("foreverchill", 1, 7);
 });
+document.getElementById("justchill").addEventListener("click", () => {
+	musWork("justchill", 1, 5);
+});
 document.getElementById("go-back").addEventListener("click", () => {
 	if(mus_info.track - 1 == 0) {
 		musWork(mus_info.album, mus_info.lastTrack, mus_info.lastTrack, mus_info.format);
@@ -123,7 +137,7 @@ document.getElementById("go-back").addEventListener("click", () => {
 	}
 });
 document.getElementById("go-on").addEventListener("click", () => {
-	if(mus_info.track + 1 >= mus_info.lastTrack + 1) {
+	if(mus_info.track >= mus_info.lastTrack) {
 		musWork(mus_info.album, 1, mus_info.lastTrack, mus_info.format);
 	} else {
 		musWork(mus_info.album, mus_info.track + 1, mus_info.lastTrack, mus_info.format);
