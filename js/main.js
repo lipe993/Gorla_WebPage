@@ -59,6 +59,7 @@ function typeWriter(message, speed, id, i = 0) {
 	}
 }
 typeWriter("Gorla Music", 70, "headerText");
+typeWriter("I'm a chill guy that do songs I like it.", 20, "desc")
 audio1.addEventListener("playing", () => {
 	document.getElementById("info").className = "goto";
 	document.getElementById("play-pause").innerHTML = mus_button_icons[1];
@@ -114,8 +115,6 @@ function musWork(album, track, lastTrack, tracksFileFormat = "wav") {
 	document.getElementById("musName").innerHTML = "";
 	typeWriter(albumToCall[currentTrack - 1], 70, "musName");
 	document.getElementById("musAlbum").innerHTML = albumPatch;
-	canvas.width = document.getElementById("musplayer").width;
-	canvas.height = document.getElementById("musplayer").height;
 }
 document.getElementById("chillbeats").addEventListener("click", () => {
 	musWork("chillbeats", 1, 6);
@@ -146,4 +145,11 @@ document.getElementById("go-on").addEventListener("click", () => {
 document.getElementById("close").addEventListener("click", () => {
 	audio1.pause();
 	document.getElementById("musplayer").style.display = "none";
+});
+audio1.addEventListener("ended", () => {
+	if(mus_info.track < mus_info.lastTrack) {
+		musWork(mus_info.album, mus_info.track + 1, mus_info.lastTrack, mus_info.format);
+	} else {
+		return;
+	}
 });
