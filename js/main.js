@@ -69,8 +69,7 @@ document.getElementById("play-pause").addEventListener("click", () => {
 		audio1.pause();
 		document.getElementById("play-pause").innerHTML = mus_button_icons[0];
 		document.getElementById("info").className = "";
-	}
-	else audio1.play();
+	} else audio1.play();
 });
 document.getElementById("bandcamp").addEventListener("click", () => {
 	window.open("https://gorla.bandcamp.com");
@@ -84,6 +83,7 @@ document.getElementById("youtube").addEventListener("click", () => {
 function musWork(album, track, lastTrack, tracksFileFormat = "wav") {
 	var currentTrack = track;
 	document.getElementById("musplayer").style.display = "block";
+	document.getElementById("footer").style = "padding-bottom: 25mm;";
 	audio1.src = `audio/${album}/track-${currentTrack}.${tracksFileFormat}`;
 	mus_info.path = audio1.src;
 	audio1.load();
@@ -145,11 +145,10 @@ document.getElementById("go-on").addEventListener("click", () => {
 document.getElementById("close").addEventListener("click", () => {
 	audio1.pause();
 	document.getElementById("musplayer").style.display = "none";
+	document.getElementById("footer").style = "padding-bottom: 0mm;";
 });
 audio1.addEventListener("ended", () => {
 	if(mus_info.track < mus_info.lastTrack) {
 		musWork(mus_info.album, mus_info.track + 1, mus_info.lastTrack, mus_info.format);
-	} else {
-		return;
 	}
 });
