@@ -1,4 +1,4 @@
-@import url('https://db.onlinewebfonts.com/c/876476f9c21d688286b0ec4bf47013a7?family=HarmonyOS+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
 
 html {
 	text-align: center;
@@ -25,7 +25,7 @@ body {
 	display: block;
 	text-align: left;
 	margin-left: 20%;
-	font-family: HarmonyOS Sans, Helvetica, Arial, sans-serif!important;
+	font-family: 'Quicksand', sans-serif;
 }
 #header {
 	margin-top: 15%;
@@ -37,7 +37,7 @@ body {
 }
 #disco {
 	color: #fff;
-	font-family: HarmonyOS Sans, Helvetica, Arial, sans-serif!important;
+	font-family: 'Quicksand', sans-serif;
 	font-size: large;
 	background: #0011ff;
 	border-radius: 4px;
@@ -49,7 +49,7 @@ body {
 }
 .card {
 	display: inline-block;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	width: 92%;
 	max-width: 300px;
 	text-align: justify;
@@ -82,7 +82,7 @@ body {
 }
 #musplayer {
 	z-index: 1;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	background: #333;
 	bottom: 0;
 	left: 0;

@@ -11,7 +11,8 @@ var mus_info = {
 	path: 0
 };
 const musNames = {
-	chillbeats: [
+	"chillbeats": [
+		["Chill Beats", 1, 7, "wav"],
 		"Chill Beats", 
 		"keys to chill out",
 		"Night Eletro", 
@@ -19,7 +20,8 @@ const musNames = {
 		"Just Pong It!", 
 		"New Start"
 	],
-	chilllofi: [
+	"chilllofi": [
+		["Chill Lo-Fi", 1, 7, "mp3"],
 		"Time Save", 
 		"Good Day",
 		"Walking", 
@@ -28,7 +30,8 @@ const musNames = {
 		"Lo-Fi + Hip-Hop II",
 		"Hard Day"
 	],
-	foreverchill: [
+	"foreverchill": [
+		["Forever Chill", 1, 7, "wav"],
 		"Time to go",
 		"chill out",
 		"in a calm place.",
@@ -37,7 +40,8 @@ const musNames = {
 		"Going Down",
 		"forever chill."
 	],
-	justchill: [
+	"justchill": [
+		["Just Chill", 1, 5, "wav"],
 		"chill out",
 		"in a calm place.",
 		"Night of Joy",
@@ -80,54 +84,29 @@ document.getElementById("bandlab").addEventListener("click", () => {
 document.getElementById("youtube").addEventListener("click", () => {
 	window.open("https://www.youtube.com/channel/UCds8sX73xHVC2XrJs9xsdaA");
 });
-function musWork(album, track, lastTrack, tracksFileFormat = "wav") {
-	var currentTrack = track;
+function musWork(album, track, lastTrack, tracksFileFormat) {
 	document.getElementById("musplayer").style.display = "block";
-	document.getElementById("footer").style = "padding-bottom: 25mm;";
-	audio1.src = `audio/${album}/track-${currentTrack}.${tracksFileFormat}`;
+	document.getElementById("footer").style = "padding-bottom: 20mm;";
+	audio1.src = `audio/${album}/track-${track}.${tracksFileFormat}`;
 	mus_info.path = audio1.src;
 	audio1.load();
 	audio1.play();
 	mus_info.album = album;
-	mus_info.track = currentTrack;
+	mus_info.track = track;
 	mus_info.lastTrack = lastTrack;
 	mus_info.format = tracksFileFormat;
-	var albumPatch;
-	var albumToCall;
-	switch(mus_info.album) {
-		case "chilllofi":
-			albumToCall = musNames.chilllofi;
-			albumPatch = "Chill Lo-Fi";
-			break;
-		case "chillbeats":
-			albumToCall = musNames.chillbeats;
-			albumPatch = "Chill Beats";
-			break;
-		case "foreverchill":
-			albumToCall = musNames.foreverchill;
-			albumPatch = "Forever Chill";
-			break;
-		case "justchill":
-			albumToCall = musNames.justchill;
-			albumPatch = "Just Chill - EP";
-			break;
-	}
+	var albumToCall = musNames[mus_info.album];
+	var albumPatch = albumToCall[0][0];
 	document.getElementById("musName").innerHTML = "";
-	typeWriter(albumToCall[currentTrack - 1], 70, "musName");
+	typeWriter(albumToCall[track], 70, "musName");
 	document.getElementById("musAlbum").innerHTML = albumPatch;
 }
-document.getElementById("chillbeats").addEventListener("click", () => {
-	musWork("chillbeats", 1, 6);
-});
-document.getElementById("chilllofi").addEventListener("click", () => {
-	musWork("chilllofi", 1, 7, "mp3");
-});
-document.getElementById("foreverchill").addEventListener("click", () => {
-	musWork("foreverchill", 1, 7);
-});
-document.getElementById("justchill").addEventListener("click", () => {
-	musWork("justchill", 1, 5);
-});
+let musButtons = document.querySelectorAll(".music");
+musButtons.forEach((item) => {
+	item.addEventListener("click", () => {
+		musWork(item.id, musNames[item.id][0][1], musNames[item.id][0][2], musNames[item.id][0][3]);
+	});
+})
 document.getElementById("go-back").addEventListener("click", () => {
 	if(mus_info.track - 1 == 0) {
 		musWork(mus_info.album, mus_info.lastTrack, mus_info.lastTrack, mus_info.format);
@@ -144,6 +123,7 @@ document.getElementById("go-on").addEventListener("click", () => {
 });
 document.getElementById("close").addEventListener("click", () => {
 	audio1.pause();
+	document.getElementById("info").className = "";
 	document.getElementById("musplayer").style.display = "none";
 	document.getElementById("footer").style = "padding-bottom: 0mm;";
 });
