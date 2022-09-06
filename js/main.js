@@ -81,28 +81,24 @@ document.getElementById("bandcamp").addEventListener("click", () => {
 document.getElementById("bandlab").addEventListener("click", () => {
 	window.open("https://www.bandlab.com/gorla_993");
 });
-document.getElementById("youtube").addEventListener("click", () => {
-	window.open("https://www.youtube.com/channel/UCds8sX73xHVC2XrJs9xsdaA");
-});
-function musWork(album, track, lastTrack, tracksFileFormat) {
+function musWork(album, track, lastTrack, format) {
 	document.getElementById("musplayer").style.display = "block";
 	document.getElementById("footer").style = "padding-bottom: 20mm;";
-	audio1.src = `audio/${album}/track-${track}.${tracksFileFormat}`;
+	audio1.src = `audio/${album}/track-${track}.${format}`;
 	mus_info.path = audio1.src;
 	audio1.load();
 	audio1.play();
 	mus_info.album = album;
 	mus_info.track = track;
 	mus_info.lastTrack = lastTrack;
-	mus_info.format = tracksFileFormat;
+	mus_info.format = format;
 	var albumToCall = musNames[mus_info.album];
 	var albumPatch = albumToCall[0][0];
 	document.getElementById("musName").innerHTML = "";
 	typeWriter(albumToCall[track], 70, "musName");
 	document.getElementById("musAlbum").innerHTML = albumPatch;
 }
-let musButtons = document.querySelectorAll(".music");
-musButtons.forEach((item) => {
+document.querySelectorAll(".music").forEach((item) => {
 	item.addEventListener("click", () => {
 		musWork(item.id, musNames[item.id][0][1], musNames[item.id][0][2], musNames[item.id][0][3]);
 	});
