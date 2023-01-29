@@ -5,35 +5,36 @@ html {
 	color: #fff;
 }
 body {
-	background-attachment: fixed;
-	background-repeat: no-repeat;
+	background: url(./background.svg);
 }
 #page {
 	overflow-y: auto;
 }
 #top {
+	display: flex;
+	justify-content: center;
 	border-radius: 8px;
 	overflow: hidden;
-	background: url(./gorla.png);
-	background-color: #000;
-	background-repeat: no-repeat;
-	padding: 30px;
+	background: url(./patternpad.png);
+	align-items: center;
+	height: 635px;
 	top: 0;
 	left: 0;
 }
+#top > img {
+	width: 90px;
+	margin-left: 20px;
+	display: inline-block;
+}
 #header, #desc {
+	font-size: 44px;
 	display: block;
-	text-align: left;
-	margin-left: 20%;
 	font-family: 'Quicksand', sans-serif;
 }
-#header {
-	margin-top: 15%;
-	font-size: 44px;
-}
 #desc {
+	position: absolute;
+	margin-top: 120px;
 	font-size: 16px;
-	margin-bottom: 22.6%;
 }
 #disco {
 	color: #fff;
@@ -75,6 +76,7 @@ body {
 	opacity: 1;
 }
 .card > .container {
+	margin-top: -4px;
 	padding: 2px 16px;
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
@@ -96,7 +98,7 @@ body {
 	padding: 8px;
 	height: auto;
 	text-align: justify;
-	width: 10%;
+	width: 15%;
 	transition: width 1.5s;
 	transition-timing-function: ease-in-out;
 }
@@ -116,6 +118,7 @@ body {
 }
 #musplayer > svg:hover, #musplayer > #play-pause:hover {
 	background: #999;
+	cursor: pointer;
 }
 #musplayer > #close {
 	z-index: 3;
@@ -135,10 +138,6 @@ body {
 	display: block;
     font-size: 0.67em;
     font-weight: bold;
-}
-#info > #time {
-	display: inline;
-	font-size: 0.67em;
 }
 ::-webkit-scrollbar {
 	width: 8px;

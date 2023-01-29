@@ -1,13 +1,25 @@
-# Gorla Web Page
-## [![Version](https://img.shields.io/badge/version-2.1.9-blue)](https://lipe993.github.io) [![Build status](https://ci.appveyor.com/api/projects/status/w030o09thupfi2cc?svg=true)](https://ci.appveyor.com/project/lipe993/gorla-webpage)
-[![My logo](./css/gorla.png)](https://lipe993.github.com/Gorla_WebPage)
-# Table of Contents
- - [Updates](#updates)
- - [To-Do List](#to-do-list)
+# Gorla Music
+
+## [![Version](https://img.shields.io/badge/version-3.0.0%20beta-blue)](https://lipe993.github.io) [![Build status](https://ci.appveyor.com/api/projects/status/ns89g468109xkpcw?svg=true)](https://ci.appveyor.com/project/lipe993/lipe993-github-io)
+
+[![My logo](./readme.image.png)](https://lipe993.github.com)
+
+## Table of Contents
+
+- [Disclaimer]
+- [Updates](#updates)
+- [To-do List](#to-do-list)
 
 ## Updates
-- Changes to the GUI
 
-## To-Do list
-- [ ] Some changes to the music player
- - [ ] Add time
+- Bug fixes
+- Many changes to the GUI
+- Changes in the audio files
+- Changes to the album implementation
+
+## To-do list
+
+- [x] New title
+- [x] Remove "Discography" button
+- [x] Changes to the album implementation
+- [ ] Implement \[& create\] "When Time Goes Unnoticed"
