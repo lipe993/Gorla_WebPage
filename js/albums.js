@@ -3,19 +3,21 @@ const albums = {
 		{
 			title: "When Time Goes Unnoticed",
 			fileFormat: "mp3",
-			releaseDate: "Not Released"
+			releaseDate: [1, 2, 2023]
 		},
 		"The calm day",
 		"Free time on the beach",
 		"The calm wind",
 		"Back in Time",
-		"Tonight"
+		"Tonight",
+		"Time to Change",
+		"Finally, we're here"
 	],
 	justchill: [
 		{
 			title: "Just Chill - EP",
 			fileFormat: "wav",
-			releaseDate: "Released June 19, 2022"
+			releaseDate: [19, 6, 2022]
 		},
 		"chill out",
 		"in a calm place.",
@@ -27,7 +29,7 @@ const albums = {
 		{
 			title: "Forever Chill",
 			fileFormat: "wav",
-			releaseDate: "Released June 17, 2022"
+			releaseDate: [17, 6, 2022]
 		},
 		"Time to go",
 		"chill out",
@@ -41,7 +43,7 @@ const albums = {
 		{
 			title: "Chill Lo-Fi",
 			fileFormat: "mp3",
-			releaseDate: "Released April 15, 2021"
+			releaseDate: [15, 5, 2021]
 		},
 		"Time Save", 
 		"Good Day",
@@ -55,7 +57,7 @@ const albums = {
 		{
 			title: "Chill Beats",
 			fileFormat: "wav",
-			releaseDate: "Released March 26, 2021"
+			releaseDate: [26, 3, 2021]
 		},
 		"Chill Beats", 
 		"keys to chill out",
