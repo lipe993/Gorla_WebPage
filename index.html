@@ -30,29 +30,26 @@
 		</div>
 		<div id="musicPlayer" style="display: none;">
 			<img id="albumCover" class="all-round" src="audio/wtgu/wtgu.png">
-			<svg id="go-back" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#FFFFFF">
-				<path d="M0 0h24v24H0V0z" fill="none"/>
-				<path d="M18 9.86v4.28L14.97 12 18 9.86m-9 0v4.28L5.97 12 9 9.86M20 6l-8.5 6 8.5 6V6zm-9 0l-8.5 6 8.5 6V6z"/>
-			</svg>
-			<div id="play-pause">
-				<svg id="play-pause" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#FFFFFF">
+			<button id="previous">
+				<svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 48 48" width="36px" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" transform="matrix(-1,0,0,1,0,0)">
+					<path d="M34 36V12h3v24Zm-23 0V12l17.3 12Z" fill="#ffffff"></path>
+				</svg>
+			</button>
+			<button id="play">
+				<svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 48 48" width="36px" fill="#FFFFFF">
 					<path d="M0 0h24v24H0V0z" fill="none"/>
 					<path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z"/>
 				</svg>
-			</div>
-			<svg id="go-on" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="36px" viewBox="0 0 24 24" width="36px" fill="#FFFFFF">
-				<g>
-					<rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/>
-					<rect fill="none" height="24" width="24"/>
-				</g>
-				<g><g/>
-					<path d="M15,9.86L18.03,12L15,14.14V9.86 M6,9.86L9.03,12L6,14.14V9.86 M13,6v12l8.5-6L13,6L13,6z M4,6v12l8.5-6L4,6L4,6z"/>
-				</g>
-			</svg>
+			</button>
+			<button id="next">
+				<svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 48 48" width="36px">
+					<path d="M34 36V12h3v24Zm-23 0V12l17.3 12Z" fill="#ffffff"/>
+				</svg>
+			</button>
 			<audio id="audio1"></audio>
 			<div id="info">
-				<span id="musName"></span>
-				<span id="musAlbum"></span>
+				<span id="musicName"></span>
+				<span id="musicAlbum"></span>
 			</div>
 			<h4 id="close">&times;</h4>
 		</div>
