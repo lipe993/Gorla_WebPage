@@ -1,5 +1,7 @@
+// Put the audio element on the audio variable
 const audio = document.getElementById("audio1");
 
+// Some functions about the music player.
 class Player {
 	constructor() {
 		// Set up all of the player variables
@@ -64,7 +66,8 @@ class Player {
 	}
 }
 
-Object.keys(albums).forEach((item) => { // Creates an entry on the discografy based on the albums constant(js/albums.js)
+// Creates an entry on the discografy based on the albums constant(js/albums.js)
+Object.keys(albums).forEach((item) => {
 	let albumElement = document.createElement("div");
 	albumElement.className = "card music";
 	albumElement.id = item;
@@ -102,6 +105,7 @@ Object.keys(albums).forEach((item) => { // Creates an entry on the discografy ba
 	document.getElementById("discography").appendChild(albumElement); // Add it to the discography
 });
 
+// Typewriter function for the title and description
 function typewriter(message, delay, id, i = 0) {
 	let findId = document.getElementById(id);
 	if(i < message.length) {
@@ -111,11 +115,14 @@ function typewriter(message, delay, id, i = 0) {
 }
 typewriter("Gorla", 80, "headerText");
 typewriter("I'm a chill guy that makes songs because I like it.", 10, "desc");
+// Set up the buttons for both my Bandcamp an Bandlab accounts. 
 document.getElementById("bandcamp").addEventListener("click", () => window.open("https://gorla.bandcamp.com"));
 document.getElementById("bandlab").addEventListener("click", () => window.open("https://www.bandlab.com/gorla_993"));
+
 // Create a new player
 let player = new Player();
-audio.addEventListener("playing", () => { // If a song is playing, show the play icon(player.playButton.playing)
+// If a song is playing, show the play icon(player.playButton.playing)
+audio.addEventListener("playing", () => {
 	document.getElementById("info").className = "goto";
 	document.getElementById("play").innerHTML = player.playButton.playing;
 });
@@ -123,8 +130,8 @@ document.querySelectorAll(".music").forEach((item) => {
 	// When we click on it, start playing the audio from the album
 	item.addEventListener("click", () => player.play(item.id, albums[item.id][0].fileFormat));
 });
-document.getElementById("play").addEventListener("click", () => player.pause());
-document.getElementById("previous").addEventListener("click", () => player.playPrevious());
-document.getElementById("next").addEventListener("click", () => player.playNext());
-document.getElementById("close").addEventListener("click", () => player.close());
+document.getElementById("play").addEventListener("click", () => player.pause()); // Play button
+document.getElementById("previous").addEventListener("click", () => player.playPrevious()); // Play previous button
+document.getElementById("next").addEventListener("click", () => player.playNext()); // Play next button
+document.getElementById("close").addEventListener("click", () => player.close()); // Close player button
 audio.addEventListener("ended", () => player.playNext()); // When the song ends, play the next

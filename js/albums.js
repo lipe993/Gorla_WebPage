@@ -1,3 +1,4 @@
+// Information about every album
 const albums = {
 	wtgu: [
 		{
